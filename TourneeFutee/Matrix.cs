@@ -4,21 +4,41 @@
     {
         // TODO : ajouter tous les attributs que vous jugerez pertinents 
 
-
         /* Crée une matrice de dimensions `nbRows` x `nbColums`.
          * Toutes les cases de cette matrice sont remplies avec `defaultValue`.
          * Lève une ArgumentOutOfRangeException si une des dimensions est négative
          */
+
+
+        private int nbRows;
+        private int nbColumns;
+        private float defaultValue;
+        private float[,] mat;
+
+
+
+
         public Matrix(int nbRows = 0, int nbColumns = 0, float defaultValue = 0)
         {
             // TODO : implémenter
+            this.nbRows = nbRows;
+            this.nbColumns = nbColumns;
+            this.defaultValue = defaultValue;
+            this.mat = new float[nbRows, nbColumns];
+            for (int i = 0; i < nbRows; i++)
+            {
+                for (int j = 0; j < nbColumns; j++)
+                {
+                    this.mat[i, j] = defaultValue;
+                }
+            }
         }
 
         // Propriété : valeur par défaut utilisée pour remplir les nouvelles cases
         // Lecture seule
         public float DefaultValue
         {
-            get; // TODO : implémenter
+            get { return defaultValue; } // TODO : implémenter
                  // pas de set
         }
 
@@ -26,7 +46,7 @@
         // Lecture seule
         public int NbRows
         {
-            get; // TODO : implémenter
+            get { return nbRows; } // TODO : implémenter
                  // pas de set
         }
 
@@ -34,7 +54,7 @@
         // Lecture seule
         public int NbColumns
         {
-            get; // TODO : implémenter
+            get { return nbColumns; } // TODO : implémenter
                  // pas de set
         }
 
@@ -46,6 +66,8 @@
         public void AddRow(int i)
         {
             // TODO : implémenter
+
+
         }
 
         /* Insère une colonne à l'indice `j`. Décale les colonnes suivantes vers la droite.
